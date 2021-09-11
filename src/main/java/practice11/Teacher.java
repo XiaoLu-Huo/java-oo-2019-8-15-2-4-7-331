@@ -22,9 +22,7 @@ public class Teacher extends Person implements Observer{
     public Teacher(int id, String name, int age, LinkedList<Klass> klass) {
         super(id, name, age);
         this.klass = klass;
-        for (Klass klass1 : klass) {
-            klass1.attach(this);
-        }
+        klass.forEach(s -> s.attach(this));
     }
 
     public Teacher(int id, String name, int age) {
